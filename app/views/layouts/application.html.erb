@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Recipe</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  
+<header class="navbar navbar-fixed-top navbar-default">
+  <div class="container">
+    <%= link_to "My Recipe","",class: "btn btn-lg btn-success",id: "logo" %>
+    <div class="nav_item">
+      <%= link_to "link1","",class: "btn btn-default btn-warning" %>
+    </div>
+      <div class="nav_item">
+      <%= link_to "link2","",class: "btn btn-default btn-warning" %>
+    </div>
+    <div class="nav_item">
+      <%= link_to "link3","",class: "btn btn-default btn-warning" %>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <%= yield %>
+  <div class="footer">
+    <p>&copy; MyRecipes 2015</p>
+  </div>
+</div>
+
+</body>
+</html>
