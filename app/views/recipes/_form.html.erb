@@ -1,0 +1,15 @@
+<%= render 'shared/errors', obj: @recipe %>
+
+<div class="row">
+    <div class = "col-md-8 col-md-offset-2 well">
+        <%= form_for @recipe do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <%= f.label :summary %>
+        <%= f.text_field :summary %>
+        <%= f.label :description %>
+        <%= f.text_area :description ,rows: 10%>
+        <%= f.submit(@recipe.new_record? ? 'Create Recipe' : 'Edit Recipe',class: "btn btn-success") %>
+        <% end %>
+    </div>
+</div>
