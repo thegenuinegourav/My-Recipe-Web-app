@@ -2,14 +2,26 @@
 
 <div class="row">
     <div class = "col-md-8 col-md-offset-2 well">
-        <%= form_for @recipe do |f| %>
+        <%= form_for(@recipe, html: { multipart: true }) do |f| %>
         <%= f.label :name %>
         <%= f.text_field :name %>
         <%= f.label :summary %>
         <%= f.text_field :summary %>
         <%= f.label :description %>
         <%= f.text_area :description ,rows: 10%>
+        <span class="picture">
+            <%= f.file_field :picture,accept: 'image/jpeg,image/png,image/gif' %>
+        </span>
         <%= f.submit(@recipe.new_record? ? 'Create Recipe' : 'Edit Recipe',class: "btn btn-success") %>
         <% end %>
     </div>
 </div>
+
+<script type="text/javascript">
+    $('#recipe_picture').bind('change',function() {
+        size_in_megabytes=this.files[0].size/1024/1024;
+        if (size_in_megabytes > 5) {
+            alert('Maximum file size is 5MB. Please choose a smaller file');
+        }
+    });
+</script> 
