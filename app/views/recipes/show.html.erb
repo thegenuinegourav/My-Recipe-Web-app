@@ -17,6 +17,14 @@
                 <strong>Steps:</strong>
             </p>
             <%= simple_format(@recipe.description) %>
+            <div class="pull-right">
+                <%=link_to "" do %>
+                  <i class="glyphicon glyphicon-thumbs-up"></i>
+                <%end%>&nbsp&nbsp&nbsp&nbsp
+                <%=link_to "" do %>
+                  <i class="glyphicon glyphicon-thumbs-down"></i>
+                <%end%>
+            </div>
         </div>
     </div>
 </div>
