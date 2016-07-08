@@ -1,7 +1,7 @@
 <%= render 'shared/page_title',title: @recipe.name %>
 <div class="row">
     <div class= "col-md-4 pull-right center">
-        <%= gravatar_for @recipe.chef,size: 200 %>
+        <%= link_to (gravatar_for @recipe.chef,size: 200), chef_path(@recipe.chef) %>
         <p>
             <h4>Brought to you by : <%= @recipe.chef.chefname %> </h4>
         </p>
@@ -18,11 +18,11 @@
             </p>
             <%= simple_format(@recipe.description) %>
             <div class="pull-right">
-                <%=link_to "" do %>
-                  <i class="glyphicon glyphicon-thumbs-up"></i>
+                <%=link_to like_recipe_path(@recipe,like: true), method: :post do %>
+                  <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= @recipe.thumbs_up_total %>
                 <%end%>&nbsp&nbsp&nbsp&nbsp
-                <%=link_to "" do %>
-                  <i class="glyphicon glyphicon-thumbs-down"></i>
+                <%=link_to like_recipe_path(@recipe,like: false), method: :post do %>
+                  <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= @recipe.thumbs_down_total %>
                 <%end%>
             </div>
         </div>

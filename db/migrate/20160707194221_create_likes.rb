@@ -4,7 +4,6 @@ class CreateLikes < ActiveRecord::Migration
       t.boolean :like
       t.integer :chef_id,:recipe_id
       t.timestamps
-      
-    end
+      end
   end
 end
