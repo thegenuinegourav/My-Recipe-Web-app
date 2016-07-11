@@ -65,10 +65,35 @@ GEM
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
     erubis (2.7.0)
+    excon (0.51.0)
     execjs (2.7.0)
+    fog (1.23.0)
+      fog-brightbox
+      fog-core (~> 1.23)
+      fog-json
+      fog-softlayer
+      ipaddress (~> 0.5)
+      nokogiri (~> 1.5, >= 1.5.11)
+    fog-brightbox (0.11.0)
+      fog-core (~> 1.22)
+      fog-json
+      inflecto (~> 0.0.2)
+    fog-core (1.42.0)
+      builder
+      excon (~> 0.49)
+      formatador (~> 0.2)
+    fog-json (1.0.2)
+      fog-core (~> 1.0)
+      multi_json (~> 1.10)
+    fog-softlayer (1.1.2)
+      fog-core
+      fog-json
+    formatador (0.2.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
+    inflecto (0.0.2)
+    ipaddress (0.8.3)
     jbuilder (2.5.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -181,6 +206,7 @@ DEPENDENCIES
   byebug
   carrierwave (= 0.10.0)
   coffee-rails (~> 4.1.0)
+  fog (= 1.23.0)
   jbuilder (~> 2.0)
   jquery-rails
   mini_magick (= 3.8.0)
