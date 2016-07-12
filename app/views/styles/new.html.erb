@@ -1,0 +1,14 @@
+<%= render 'shared/page_title',title: "Create a new Style" %>
+
+<%= render 'shared/errors', obj: @style %>
+
+<div class="row">
+    <div class = "col-md-8 col-md-offset-2 well">
+        <%= form_for @style do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        
+        <%= f.submit 'Create Style',class: "btn btn-success" %>
+        <% end %>
+    </div>
+</div>
