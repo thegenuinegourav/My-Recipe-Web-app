@@ -41,16 +41,6 @@ body {
     font-size: 2em;
 }
 
-.custom_input {
-    width: 13px;
-    height: 13px;
-    padding: 0;
-    margin:0;
-    vertical-align: bottom;
-    position: relative;
-    top: -1px;
-    *overflow: hidden;
-}
 
 .center {
     text-align: center;
@@ -98,6 +88,10 @@ input,textarea,select,uneditable-input {
     border-radius: 5px;
     width: 100%;
     margin-bottom: 15px;
+}
+
+.input_checkbox input {
+    width: auto !important;
 }
 
 input {

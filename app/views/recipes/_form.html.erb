@@ -12,13 +12,13 @@
         
         <strong>Styles:</strong>
             <%= f.collection_check_boxes :style_ids, Style.all, :id, :name do |cb| %>
-              <% cb.label(class: "checkbox-inline input_checkbox"){cb.check_box(class: "checkbox custom_input") +  cb.text} %>
+              <% cb.label(class: "checkbox-inline input_checkbox"){cb.check_box(class: "checkbox") +  cb.text} %>
             <% end %>
         <br><br>
       
         <strong>Ingredients:</strong>
              <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name do |cbi| %>
-              <% cbi.label(class: "checkbox-inline input_checkbox"){cbi.check_box(class: "checkbox custom_input") +  cbi.text} %>
+              <% cbi.label(class: "checkbox-inline input_checkbox"){cbi.check_box(class: "checkbox") +  cbi.text} %>
              <% end %>
        <br><br>
          
