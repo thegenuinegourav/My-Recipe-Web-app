@@ -34,6 +34,24 @@ body {
     font-size: 2em;
 }
 
+.nav_ul_item {
+    padding-left: 25px;
+    float: left;
+    margin-top: 20px;
+    font-size: 2em;
+}
+
+.custom_input {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+    *overflow: hidden;
+}
+
 .center {
     text-align: center;
 }
