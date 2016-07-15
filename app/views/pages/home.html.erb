@@ -1,24 +1,14 @@
 <div class="container">
   <div class="center jumbotron">
     <h1>Welcome to My Receipe App</h1> 
-    <h2>Some text</h2> 
+    <h2><i>A recipe has no soul, you as the cook must bring soul to the recipe.</i></h2> 
     <div class="center">
         <%= link_to "Sign Up",register_path,class: "btn btn-lg btn-success"%>
     </div>
   </div>
 </div>
 <div class="row">
-    <div class="col-lg-4">
-        <h3 class="midrow">
-            Sign in to your account
-        </h3>
-        <h2 class="left">
-            Add/Update your recipes/create reviews/like-dislike recipes and much more!!
-        </h2>
-        <p>
-            <%= link_to "Login to your account",login_path,class: "btn btn-small btn-warning"%>
-        </p>
-    </div>
+    
     <div class="col-lg-4">
         <h3 class="midrow">
             View recipes as Guest User
@@ -30,6 +20,19 @@
             <%= link_to "Browse Recipe Listings",recipes_path,class: "btn btn-small btn-warning"%>
         </p>
     </div>
+    
+    <div class="col-lg-4">
+        <h3 class="midrow">
+            Sign in to your account
+        </h3>
+        <h2 class="left">
+            Add / Update your recipes / create reviews /like-dislike recipes and much more!!
+        </h2>
+        <p>
+            <%= link_to "Login to your account",login_path,class: "btn btn-small btn-warning"%>
+        </p>
+    </div>
+    
     <div class="col-lg-4">
         <h3 class="midrow">
             View recipes as Guest User
@@ -38,7 +41,7 @@
             Browse and view recipes as a guest and sign up later
         </h2>
         <p>
-            <%= link_to "Browse Recipe Listings","",class: "btn btn-small btn-warning"%>
+            <%= link_to "Browse Recipe Listings",recipes_path,class: "btn btn-small btn-warning"%>
         </p>
     </div>
 </div>
