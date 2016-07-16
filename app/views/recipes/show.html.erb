@@ -13,6 +13,7 @@
         <% if logged_in? and current_user.admin?  %>
           <%= link_to "[Delete Recipe]", @recipe, method: :delete, data: { confirm: "Are you sure?" } %>
         <% end %>
+        <br><br>
         <h3><%= @recipe.summary %></h3>
         <div class="show_recipe">
             <%= image_tag(@recipe.picture.url,class: "gravatar") if @recipe.picture? %>
@@ -37,7 +38,26 @@
                 <%end%>
             </div>
         </div>
+        <strong><hr></strong>
+        <% if logged_in? %> 
+          <% if current_user.reviews.find_by(recipe: @recipe)==nil %>
+          <%= link_to "Write Review",new_review_path(@recipe), class: "btn btn-success pull-right" %>
+          <% else %>
+          <br>
+          <h4>My Review:</h4>
+          <div class="row">
+              <div class = "col-md-12 well">
+                  <%= link_to "Edit",edit_review_path(current_user.reviews.find_by(recipe: @recipe)), class: "btn btn-success pull-right" %>
+                  <br><br>
+                  <strong><i><%= current_user.reviews.find_by(recipe: @recipe).review %></i></strong>
+                  
+              </div>
+          </div>
+        <% end %>
+        <% end %>
     </div>
+    
 </div>
-
+<h5> <%= link_to "View All Reviews", all_reviews_path(@recipe), class: "btn btn-small btn-warning" %></h5>
+<br>
 <h5> <%= link_to "Back to All Recipes", recipes_path, class: "btn btn-small btn-warning" %></h5>

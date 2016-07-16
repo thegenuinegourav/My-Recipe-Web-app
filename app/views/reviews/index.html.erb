@@ -1,0 +1,41 @@
+<%= render 'shared/page_title',title: "Reviews for "+ @recipe.name %>
+
+<ul class="nav nav-tabs">
+    <li class="active">
+        <%= link_to "Recipes",recipes_path %>
+    </li>
+    <li>
+        <%= link_to "Chefs",chefs_path %>
+    </li>
+    
+</ul>
+
+<%= will_paginate @reviews %>
+
+<% @recipe.reviews.each do |review| %>
+
+<div class="row">
+    
+    <div class="col-md-3">
+        <section class="chef_info center">
+            <%= link_to gravatar_for(review.chef,size: 100), chef_path(review.chef)%> <!-- gravatar_for is user defined method present in helpers -->
+        </section>
+    </div>
+    
+    <div class="col-lg-6 well">
+        
+        <h3><%= review.review %></h3>
+        <p>Posted By: <i> Chef <%= link_to review.chef.chefname,chef_path(review.chef) %></i></p>
+        <p>
+            <small> <span class="text-muted">posted: <%= time_ago_in_words(review.created_at) %>, </span> </small>
+            <small> <span class="text-muted">updated: <%= time_ago_in_words(review.updated_at) %> </span> </small>
+        </p>
+    </div>
+    
+
+</div>
+
+<hr/>
+<% end %>
+
+<%= will_paginate %>
